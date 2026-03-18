@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Privacy Policy — Nuetech Controller</title>
+  <title>Privacy Policy — Test App</title>
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -15,28 +15,39 @@
       margin: 0 auto;
       padding: 48px 24px 80px;
     }
-
+ 
     h1 { font-size: 28px; font-weight: 700; margin-bottom: 4px; }
     h2 { font-size: 17px; font-weight: 600; margin: 36px 0 8px; color: #111; }
-
-    .meta { color: #777; font-size: 14px; margin-bottom: 40px; }
-
+ 
+    .meta { color: #777; font-size: 14px; margin-bottom: 16px; }
+ 
     p { margin: 0 0 12px; color: #444; }
-
+ 
     ul { margin: 8px 0 12px 20px; color: #444; }
     ul li { margin-bottom: 4px; }
-
+ 
     hr { border: none; border-top: 1px solid #eee; margin: 40px 0; }
-
+ 
     a { color: #2563eb; }
-
+ 
     code {
       background: #f3f4f6;
       padding: 1px 6px;
       border-radius: 4px;
       font-size: 14px;
     }
-
+ 
+    .test-banner {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-left: 4px solid #2563eb;
+      padding: 12px 16px;
+      border-radius: 4px;
+      font-size: 14px;
+      color: #1e3a5f;
+      margin-bottom: 36px;
+    }
+ 
     .notice {
       background: #fffbeb;
       border-left: 3px solid #f59e0b;
@@ -46,12 +57,12 @@
       color: #555;
       margin: 12px 0;
     }
-
+ 
     .ds-table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 15px; }
     .ds-table th { text-align: left; padding: 8px 12px; background: #f5f5f5; font-size: 13px; color: #555; }
     .ds-table td { padding: 10px 12px; border-bottom: 1px solid #eee; color: #444; vertical-align: top; }
     .ds-table td:first-child { font-weight: 500; color: #222; width: 40%; }
-
+ 
     .contact-block {
       background: #f8f9fc;
       border: 1px solid #e2e8f0;
@@ -62,76 +73,85 @@
       color: #444;
       line-height: 1.9;
     }
-
+ 
     footer { margin-top: 60px; font-size: 13px; color: #aaa; }
   </style>
 </head>
 <body>
-
+ 
   <h1>Privacy Policy</h1>
-  <p class="meta">Nuetech Controller &nbsp;·&nbsp; Last updated: March 2026</p>
-
+  <p class="meta">Test App &nbsp;·&nbsp; Last updated: March 2026</p>
+ 
+  <div class="test-banner">
+    ℹ️ This is a test version of the application used for internal testing and Play Store submission validation. No personal data is collected or shared.
+  </div>
+ 
   <h2>1. Introduction</h2>
-  <p>Nuetech Controller is a mobile application developed by Nuetech Solar Systems Pvt. Ltd. It connects your smartphone to the Nuetech solar water heater controller using Bluetooth, allowing users to configure heating schedules, set temperature targets, and sync timer slots with the controller for efficient and automated water heating.</p>
-  <p>This Privacy Policy explains how information is handled when using the Nuetech Controller application.</p>
-
+  <p>Test App (Test App Controller) is a mobile application used for internal validation and Play Store submission testing. It connects your smartphone to a compatible Bluetooth hardware controller, allowing users to configure heating schedules, set temperature targets, and monitor system status via Bluetooth.</p>
+  <p>This Privacy Policy explains how information is handled when using this test application.</p>
+ 
   <h2>2. Data Collection</h2>
-  <p>This app does not collect, store, or transmit personal information. No user account or registration is required. The app does not collect names, email addresses, phone numbers, contacts, photos, messages, financial information, or device identifiers linked to personal identity.</p>
-
+  <p>This test application does not collect, store, or transmit personal information. No user account or registration is required. The app does not collect:</p>
+  <ul>
+    <li>Names, email addresses, or phone numbers</li>
+    <li>Contacts or messages</li>
+    <li>Photos or media files</li>
+    <li>Financial information</li>
+    <li>Location information</li>
+    <li>Device identifiers linked to personal identity</li>
+  </ul>
+ 
   <h2>3. Bluetooth Communication</h2>
-  <p>The app uses Bluetooth exclusively as a Central/Client — it scans for and connects to the Nuetech controller. It does not advertise or act as a Bluetooth peripheral.</p>
+  <p>The app uses Bluetooth exclusively as a Central/Client — it scans for and connects to the hardware controller. It does not advertise or act as a Bluetooth peripheral.</p>
   <p>Bluetooth is used to:</p>
   <ul>
-    <li>Discover nearby Nuetech controller devices</li>
+    <li>Discover and pair with nearby compatible controller devices</li>
     <li>Connect to the controller hardware</li>
     <li>Send commands — temperature set point, slot scheduling configuration</li>
     <li>Receive data — tank temperature, coil status, device operating state</li>
   </ul>
   <p>All communication is directly between the phone and the hardware. No data is sent to external servers.</p>
-
+ 
   <h2>4. Local Device Data</h2>
   <p>The app may store limited configuration data locally on the device — such as previously connected device identifiers, saved temperature settings, and slot scheduler configurations. This data never leaves the device.</p>
-
+ 
   <h2>5. Location Permission</h2>
   <p>The app requests location permission on devices running Android 11 and below (API level ≤ 30). This is a mandatory Android operating system requirement for apps that perform Bluetooth device scanning on these older versions of Android.</p>
   <div class="notice">
-    ⚠️ The location permission is used <strong>solely to allow Bluetooth scanning</strong> on older Android devices. The app does not access, read, record, store, or transmit the device's physical location at any time.
+    ⚠️ The location permission is used <strong>solely to allow Bluetooth scanning</strong> on older Android devices. This test application does not access, read, record, store, or transmit the device's physical location at any time.
   </div>
   <p>On Android 12 and above (API level 31+), the app uses the <code>BLUETOOTH_SCAN</code> permission with the <code>neverForLocation</code> flag. This explicitly tells Android that location is not derived from Bluetooth scan results, and no location prompt is shown on these devices.</p>
-  <p>In summary:</p>
   <ul>
     <li><strong>Android 12+</strong> — No location permission requested or used</li>
-    <li><strong>Android 11 and below</strong> — Location permission requested by Android OS requirement for BLE scanning only, not used for any location purpose</li>
+    <li><strong>Android 11 and below</strong> — Location permission required by Android OS for BLE scanning only; not used for any location purpose</li>
   </ul>
-
+ 
   <h2>6. Internet Connectivity</h2>
-  <p>The app does not require internet connectivity. The INTERNET permission is not declared in the release build. All communication is local via Bluetooth.</p>
-
+  <p>This test application does not require internet connectivity. The INTERNET permission is not declared in the release build. All communication is local via Bluetooth only — no data is sent to or received from the internet.</p>
+ 
   <h2>7. Data Sharing</h2>
-  <p>The app does not share data with third parties. It has no advertising networks, analytics services, or tracking systems. No user information is sold, rented, or shared.</p>
-
+  <p>This test application does not share data with third parties. It has no advertising networks, analytics services, or tracking systems. No user information is sold, rented, or shared.</p>
+ 
   <h2>8. Security</h2>
-  <p>As the app does not collect or transmit personal data, risks associated with remote data storage do not apply. All communication is local between the phone and the connected hardware.</p>
-
+  <p>As this test application does not collect or transmit personal data, risks associated with remote data storage do not apply. All communication is local between the phone and the connected hardware.</p>
+ 
   <h2>9. Children's Privacy</h2>
-  <p>This app is not designed for children under 13 and does not knowingly collect information from children.</p>
-
+  <p>This test application is not designed for children under 13 and does not knowingly collect information from children.</p>
+ 
   <h2>10. Changes to This Policy</h2>
-  <p>This policy may be updated to reflect changes in the app or legal requirements. The "Last Updated" date at the top will reflect any changes.</p>
-
+  <p>This policy may be updated to reflect changes in the application or legal requirements. The "Last Updated" date at the top will reflect any changes.</p>
+ 
   <h2>11. Contact</h2>
   <p>For questions about this privacy policy, contact:</p>
   <div class="contact-block">
-    <strong>Nuetech Solar Systems Pvt. Ltd</strong><br/>
-    #5, B.M. Shankarappa Industrial Estate<br/>
-    Sunkadakatte, Magadi Main Road<br/>
-    Bangalore – 560 091<br/><br/>
+    <strong>Test App Support</strong><br/>
+    This test application is used for internal validation and Play Store submission testing.<br/><br/>
     📞 080-23483766<br/>
-    ✉ <a href="mailto:info@nuetechsolar.com">info@nuetechsolar.com</a>
+    ✉ <a href="mailto:support@testapp.com">support@testapp.com</a>
   </div>
-
+ 
   <hr/>
-
+ 
   <h2>Google Play Data Safety</h2>
   <p>Recommended answers for the Data Safety form in Google Play Console:</p>
   <table class="ds-table">
@@ -151,8 +171,8 @@
       <tr><td>Purpose</td><td>App functionality — local Bluetooth device control only. Location permission on API ≤ 30 is an Android OS requirement for BLE scanning and is not used to determine location.</td></tr>
     </tbody>
   </table>
-
-  <footer>© 2026 Nuetech Solar Systems Pvt. Ltd. All rights reserved.</footer>
-
+ 
+  <footer>© 2026 Test App. All rights reserved.</footer>
+ 
 </body>
 </html>
