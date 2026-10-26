@@ -466,17 +466,16 @@
       <div class="storage-item">
         <div class="label">&#128220; SQLite Database — Device Registration</div>
         <div class="desc">
-          When you scan the QR code on your Nuetech hardware, the app saves the following
+          When you register your Nuetech hardware via Bluetooth, the app saves the following
           device metadata to a local SQLite database (<code>nuetech_devices.db</code>):
           <ul style="margin-top:8px;">
-            <li><strong>Device ID</strong> — hardware identifier extracted from the QR payload</li>
+            <li><strong>Device ID</strong> — unique hardware/Bluetooth identifier</li>
             <li><strong>Serial Number</strong> — product serial number</li>
-            <li><strong>Device Name</strong> — optional user-assigned label</li>
+            <li><strong>Device Name</strong> — optional user-assigned label or advertised name</li>
             <li><strong>Model</strong> — hardware model designation</li>
-            <li><strong>Firmware Version</strong> — device firmware string (from QR code)</li>
-            <li><strong>Hardware Version</strong> — hardware revision string (from QR code)</li>
-            <li><strong>Manufacture Date</strong> — production date from QR payload</li>
-            <li><strong>Raw QR Payload</strong> — full QR code string as scanned</li>
+            <li><strong>Firmware Version</strong> — device firmware revision string</li>
+            <li><strong>Hardware Version</strong> — hardware revision string</li>
+            <li><strong>Manufacture Date</strong> — production date of the hardware</li>
             <li><strong>Registered At</strong> — local device timestamp of registration</li>
           </ul>
           Only one device may be registered at a time. This data is used solely to identify and
