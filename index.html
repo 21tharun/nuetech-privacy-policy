@@ -3,176 +3,847 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Privacy Policy — Test App</title>
+  <title>Privacy Policy — Nuetech BT Controller</title>
+  <meta name="description" content="Privacy Policy for the Nuetech BT Controller Android app by Nuetech Solar Systems Pvt. Ltd. The app operates offline via Bluetooth and collects no personal data."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
   <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      font-size: 16px;
-      line-height: 1.7;
-      color: #222;
-      background: #fff;
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 48px 24px 80px;
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --brand:        #1a56db;
+      --brand-light:  #eff6ff;
+      --warn-bg:      #fffbeb;
+      --warn-border:  #f59e0b;
+      --surface:      #f8fafc;
+      --border:       #e2e8f0;
+      --text-primary: #0f172a;
+      --text-body:    #374151;
+      --text-muted:   #64748b;
+      --text-meta:    #94a3b8;
+      --radius:       10px;
     }
- 
-    h1 { font-size: 28px; font-weight: 700; margin-bottom: 4px; }
-    h2 { font-size: 17px; font-weight: 600; margin: 36px 0 8px; color: #111; }
- 
-    .meta { color: #777; font-size: 14px; margin-bottom: 16px; }
- 
-    p { margin: 0 0 12px; color: #444; }
- 
-    ul { margin: 8px 0 12px 20px; color: #444; }
-    ul li { margin-bottom: 4px; }
- 
-    hr { border: none; border-top: 1px solid #eee; margin: 40px 0; }
- 
-    a { color: #2563eb; }
- 
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 15.5px;
+      line-height: 1.75;
+      color: var(--text-body);
+      background: #ffffff;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 56px 28px 96px;
+    }
+
+    /* Header */
+    .header-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--brand-light);
+      color: var(--brand);
+      border: 1px solid #bfdbfe;
+      border-radius: 999px;
+      font-size: 12.5px;
+      font-weight: 600;
+      padding: 4px 14px;
+      margin-bottom: 20px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .meta {
+      color: var(--text-muted);
+      font-size: 14px;
+      margin-bottom: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+    .meta span { display: flex; align-items: center; gap: 5px; }
+
+    /* Table of Contents */
+    .toc {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-bottom: 44px;
+    }
+    .toc-title {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+    .toc ol {
+      margin-left: 18px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px 24px;
+    }
+    .toc ol li { font-size: 14px; }
+    .toc a { color: var(--brand); text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
+
+    /* Sections */
+    section { margin-bottom: 44px; scroll-margin-top: 24px; }
+
+    h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--brand-light);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    h2 .sec-num {
+      background: var(--brand);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      border-radius: 999px;
+      width: 22px;
+      height: 22px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    p { margin-bottom: 12px; color: var(--text-body); }
+    p:last-child { margin-bottom: 0; }
+
+    ul, ol { margin: 10px 0 14px 22px; color: var(--text-body); }
+    li { margin-bottom: 5px; }
+
+    strong { color: var(--text-primary); font-weight: 600; }
+    a { color: var(--brand); }
     code {
-      background: #f3f4f6;
+      background: #f1f5f9;
       padding: 1px 6px;
       border-radius: 4px;
-      font-size: 14px;
+      font-size: 13.5px;
+      font-family: 'Courier New', monospace;
     }
- 
-    .test-banner {
-      background: #eff6ff;
-      border: 1px solid #bfdbfe;
-      border-left: 4px solid #2563eb;
-      padding: 12px 16px;
-      border-radius: 4px;
+
+    /* Notice / Warning box */
+    .notice {
+      background: var(--warn-bg);
+      border-left: 3px solid var(--warn-border);
+      padding: 14px 18px;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font-size: 14px;
+      color: #4b3a00;
+      margin: 14px 0;
+      line-height: 1.65;
+    }
+    .notice strong { color: #78350f; }
+
+    /* Info box */
+    .info-box {
+      background: var(--brand-light);
+      border-left: 3px solid var(--brand);
+      padding: 14px 18px;
+      border-radius: 0 var(--radius) var(--radius) 0;
       font-size: 14px;
       color: #1e3a5f;
-      margin-bottom: 36px;
+      margin: 14px 0;
+      line-height: 1.65;
     }
- 
-    .notice {
-      background: #fffbeb;
-      border-left: 3px solid #f59e0b;
-      padding: 12px 16px;
-      border-radius: 4px;
+
+    /* Permission / package table */
+    .perm-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
       font-size: 14px;
-      color: #555;
-      margin: 12px 0;
     }
- 
-    .ds-table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 15px; }
-    .ds-table th { text-align: left; padding: 8px 12px; background: #f5f5f5; font-size: 13px; color: #555; }
-    .ds-table td { padding: 10px 12px; border-bottom: 1px solid #eee; color: #444; vertical-align: top; }
-    .ds-table td:first-child { font-weight: 500; color: #222; width: 40%; }
- 
+    .perm-table thead tr { background: var(--surface); }
+    .perm-table th {
+      text-align: left;
+      padding: 10px 14px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      border-bottom: 2px solid var(--border);
+    }
+    .perm-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      color: var(--text-body);
+    }
+    .perm-table td:first-child {
+      font-weight: 600;
+      color: var(--text-primary);
+      white-space: nowrap;
+    }
+    .perm-table tr:last-child td { border-bottom: none; }
+
+    /* Data Safety table */
+    .ds-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin-top: 14px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .ds-table th {
+      background: var(--surface);
+      text-align: left;
+      padding: 10px 14px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+    }
+    .ds-table td {
+      padding: 12px 14px;
+      border-top: 1px solid var(--border);
+      color: var(--text-body);
+      vertical-align: top;
+    }
+    .ds-table td:first-child {
+      font-weight: 600;
+      color: var(--text-primary);
+      width: 38%;
+    }
+    .badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 2px 9px;
+      border-radius: 999px;
+    }
+    .badge-no {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+
+    /* Storage cards */
+    .storage-grid { display: grid; gap: 10px; margin-top: 12px; }
+    .storage-item {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 18px;
+      background: var(--surface);
+    }
+    .storage-item .label {
+      font-size: 12.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+    .storage-item .desc { font-size: 14px; color: var(--text-body); }
+
+    /* Contact block */
     .contact-block {
-      background: #f8f9fc;
-      border: 1px solid #e2e8f0;
-      border-radius: 10px;
-      padding: 20px 24px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 26px;
       margin-top: 12px;
-      font-size: 15px;
-      color: #444;
-      line-height: 1.9;
+      font-size: 14.5px;
+      color: var(--text-body);
+      line-height: 2;
     }
- 
-    footer { margin-top: 60px; font-size: 13px; color: #aaa; }
+    .contact-block .name {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 48px 0;
+    }
+
+    footer {
+      margin-top: 60px;
+      font-size: 13px;
+      color: var(--text-meta);
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    @media (max-width: 540px) {
+      body { padding: 32px 18px 72px; }
+      h1 { font-size: 26px; }
+      .toc ol { grid-template-columns: 1fr; }
+      .perm-table td:first-child { white-space: normal; }
+    }
   </style>
 </head>
 <body>
- 
+
+  <div class="header-badge">&#9679; Legal Document</div>
   <h1>Privacy Policy</h1>
-  <p class="meta">Test App &nbsp;·&nbsp; Last updated: March 2026</p>
- 
-  <div class="test-banner">
-    ℹ️ This is a test version of the application used for internal testing and Play Store submission validation. No personal data is collected or shared.
+  <div class="meta">
+    <span>&#128196; Nuetech BT Controller</span>
+    <span>&#128197; Last Updated: October 26, 2026</span>
+    <span>&#128296; Version 1.0.0</span>
   </div>
- 
-  <h2>1. Introduction</h2>
-  <p>Test App (Test App Controller) is a mobile application used for internal validation and Play Store submission testing. It connects your smartphone to a compatible Bluetooth hardware controller, allowing users to configure heating schedules, set temperature targets, and monitor system status via Bluetooth.</p>
-  <p>This Privacy Policy explains how information is handled when using this test application.</p>
- 
-  <h2>2. Data Collection</h2>
-  <p>This test application does not collect, store, or transmit personal information. No user account or registration is required. The app does not collect:</p>
-  <ul>
-    <li>Names, email addresses, or phone numbers</li>
-    <li>Contacts or messages</li>
-    <li>Photos or media files</li>
-    <li>Financial information</li>
-    <li>Location information</li>
-    <li>Device identifiers linked to personal identity</li>
-  </ul>
- 
-  <h2>3. Bluetooth Communication</h2>
-  <p>The app uses Bluetooth exclusively as a Central/Client — it scans for and connects to the hardware controller. It does not advertise or act as a Bluetooth peripheral.</p>
-  <p>Bluetooth is used to:</p>
-  <ul>
-    <li>Discover and pair with nearby compatible controller devices</li>
-    <li>Connect to the controller hardware</li>
-    <li>Send commands — temperature set point, slot scheduling configuration</li>
-    <li>Receive data — tank temperature, coil status, device operating state</li>
-  </ul>
-  <p>All communication is directly between the phone and the hardware. No data is sent to external servers.</p>
- 
-  <h2>4. Local Device Data</h2>
-  <p>The app may store limited configuration data locally on the device — such as previously connected device identifiers, saved temperature settings, and slot scheduler configurations. This data never leaves the device.</p>
- 
-  <h2>5. Location Permission</h2>
-  <p>The app requests location permission on devices running Android 11 and below (API level ≤ 30). This is a mandatory Android operating system requirement for apps that perform Bluetooth device scanning on these older versions of Android.</p>
-  <div class="notice">
-    ⚠️ The location permission is used <strong>solely to allow Bluetooth scanning</strong> on older Android devices. This test application does not access, read, record, store, or transmit the device's physical location at any time.
-  </div>
-  <p>On Android 12 and above (API level 31+), the app uses the <code>BLUETOOTH_SCAN</code> permission with the <code>neverForLocation</code> flag. This explicitly tells Android that location is not derived from Bluetooth scan results, and no location prompt is shown on these devices.</p>
-  <ul>
-    <li><strong>Android 12+</strong> — No location permission requested or used</li>
-    <li><strong>Android 11 and below</strong> — Location permission required by Android OS for BLE scanning only; not used for any location purpose</li>
-  </ul>
- 
-  <h2>6. Internet Connectivity</h2>
-  <p>This test application does not require internet connectivity. The INTERNET permission is not declared in the release build. All communication is local via Bluetooth only — no data is sent to or received from the internet.</p>
- 
-  <h2>7. Data Sharing</h2>
-  <p>This test application does not share data with third parties. It has no advertising networks, analytics services, or tracking systems. No user information is sold, rented, or shared.</p>
- 
-  <h2>8. Security</h2>
-  <p>As this test application does not collect or transmit personal data, risks associated with remote data storage do not apply. All communication is local between the phone and the connected hardware.</p>
- 
-  <h2>9. Children's Privacy</h2>
-  <p>This test application is not designed for children under 13 and does not knowingly collect information from children.</p>
- 
-  <h2>10. Changes to This Policy</h2>
-  <p>This policy may be updated to reflect changes in the application or legal requirements. The "Last Updated" date at the top will reflect any changes.</p>
- 
-  <h2>11. Contact</h2>
-  <p>For questions about this privacy policy, contact:</p>
-  <div class="contact-block">
-    <strong>Test App Support</strong><br/>
-    This test application is used for internal validation and Play Store submission testing.<br/><br/>
-    📞 080-23483766<br/>
-    ✉ <a href="mailto:support@testapp.com">support@testapp.com</a>
-  </div>
- 
+
+  <!-- Table of Contents -->
+  <nav class="toc" aria-label="Table of Contents">
+    <div class="toc-title">Contents</div>
+    <ol>
+      <li><a href="#sec1">Overview &amp; Scope</a></li>
+      <li><a href="#sec2">Data We Collect</a></li>
+      <li><a href="#sec3">Permissions Explained</a></li>
+      <li><a href="#sec4">Local Data Storage</a></li>
+      <li><a href="#sec5">Bluetooth Communication</a></li>
+      <li><a href="#sec6">Third-Party Libraries</a></li>
+      <li><a href="#sec7">Data Sharing &amp; Disclosure</a></li>
+      <li><a href="#sec8">Children's Privacy</a></li>
+      <li><a href="#sec9">Data Retention</a></li>
+      <li><a href="#sec10">Security</a></li>
+      <li><a href="#sec11">Changes to This Policy</a></li>
+      <li><a href="#sec12">Contact Us</a></li>
+    </ol>
+  </nav>
+
+  <!-- 1. Overview -->
+  <section id="sec1">
+    <h2><span class="sec-num">1</span> Overview &amp; Scope</h2>
+    <p>
+      <strong>Nuetech BT Controller</strong> is a mobile application developed and published by
+      <strong>Nuetech Solar Systems Pvt. Ltd.</strong> ("we", "our", or "us"). The app allows users
+      to connect their Android smartphone to Nuetech solar water heater controller hardware via
+      Bluetooth (Classic and BLE). Once connected, users can monitor real-time tank temperatures,
+      set target temperatures, configure dual time-slot heating schedules, and register their
+      device using a QR code scan.
+    </p>
+    <p>
+      This Privacy Policy explains what information the app accesses, why it is needed, how it is
+      stored, and your rights with respect to that information. By installing or using Nuetech BT
+      Controller, you agree to the practices described in this policy.
+    </p>
+    <div class="info-box">
+      <strong>Plain-language summary:</strong> This app works entirely offline via a local Bluetooth
+      connection. It does <em>not</em> collect personal information, does <em>not</em> require user
+      accounts, does <em>not</em> send data to the internet, and does <em>not</em> share any data
+      with third parties or advertisers.
+    </div>
+  </section>
+
+  <!-- 2. Data We Collect -->
+  <section id="sec2">
+    <h2><span class="sec-num">2</span> Data We Collect</h2>
+    <p>
+      The app does <strong>not</strong> collect, transmit, or store any personally identifiable
+      information (PII). Specifically, the app never accesses or processes:
+    </p>
+    <ul>
+      <li>Your name, email address, or phone number</li>
+      <li>Passwords or account credentials</li>
+      <li>Financial or payment information</li>
+      <li>Contacts, messages, or call logs</li>
+      <li>Photos, camera, or microphone input</li>
+      <li>Browser history or search history</li>
+      <li>Device identifiers linked to personal identity (IMEI, Google Advertising ID, etc.)</li>
+      <li>Your physical GPS coordinates or derived location</li>
+    </ul>
+    <p>
+      The only data the app reads and stores locally is <strong>hardware device metadata</strong>
+      obtained from scanning your Nuetech device's QR code and from live Bluetooth communication
+      with that device — described fully in Section 4.
+    </p>
+  </section>
+
+  <!-- 3. Permissions -->
+  <section id="sec3">
+    <h2><span class="sec-num">3</span> Permissions Explained</h2>
+    <p>
+      The following Android permissions are declared in the app. Each permission is used exclusively
+      for the stated purpose and for no other purpose.
+    </p>
+
+    <table class="perm-table">
+      <thead>
+        <tr>
+          <th>Permission</th>
+          <th>Android API</th>
+          <th>Why it is required</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>BLUETOOTH_SCAN</td>
+          <td>API 31+ (Android 12+)</td>
+          <td>Allows the app to discover nearby Nuetech Bluetooth devices (Classic and BLE). Required on modern Android.</td>
+        </tr>
+        <tr>
+          <td>BLUETOOTH_CONNECT</td>
+          <td>API 31+ (Android 12+)</td>
+          <td>Allows the app to establish and maintain a connection to a paired Nuetech controller unit.</td>
+        </tr>
+        <tr>
+          <td>BLUETOOTH</td>
+          <td>API ≤ 30 (legacy)</td>
+          <td>Provides basic Bluetooth access on Android 11 and below. Declared with <code>maxSdkVersion="30"</code> so it is not granted on newer Android versions.</td>
+        </tr>
+        <tr>
+          <td>BLUETOOTH_ADMIN</td>
+          <td>API ≤ 30 (legacy)</td>
+          <td>Enables Bluetooth device discovery on Android 11 and below. Also scoped to <code>maxSdkVersion="30"</code>.</td>
+        </tr>
+        <tr>
+          <td>ACCESS_FINE_LOCATION</td>
+          <td>All supported versions</td>
+          <td>
+            <strong>Required by the Android operating system to scan for nearby Classic Bluetooth and BLE devices.</strong>
+            This is an Android platform-level constraint — not a choice made by our app. Several OEM firmware
+            distributions (such as MIUI and ColorOS) additionally enforce this permission for Bluetooth
+            discovery even on Android 12+.
+            <div class="notice">
+              &#9888;&#65039; <strong>We do not access, read, record, track, store, or transmit
+              your physical location at any time.</strong> The permission is used solely as a
+              technical prerequisite mandated by the Android Bluetooth hardware stack to initiate
+              Bluetooth device scans.
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>ACCESS_COARSE_LOCATION</td>
+          <td>All supported versions</td>
+          <td>
+            Declared alongside ACCESS_FINE_LOCATION as jointly required by Android Bluetooth discovery APIs.
+            Subject to the identical restriction — no location data is read, stored, or transmitted.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="margin-top:18px;">
+      <strong>INTERNET permission:</strong> The INTERNET permission is <strong>not declared</strong>
+      in the production release manifest. All communication is local via Bluetooth. Future versions
+      that introduce optional cloud features will update this policy and request user consent before
+      any internet permission is added.
+    </p>
+  </section>
+
+  <!-- 4. Local Data Storage -->
+  <section id="sec4">
+    <h2><span class="sec-num">4</span> Local Data Storage</h2>
+    <p>
+      The app stores a small amount of data <strong>locally on your device only</strong>. This data
+      is never transmitted to any server, cloud service, analytics platform, or third party.
+    </p>
+
+    <div class="storage-grid">
+      <div class="storage-item">
+        <div class="label">&#128220; SQLite Database — Device Registration</div>
+        <div class="desc">
+          When you scan the QR code on your Nuetech hardware, the app saves the following
+          device metadata to a local SQLite database (<code>nuetech_devices.db</code>):
+          <ul style="margin-top:8px;">
+            <li><strong>Device ID</strong> — hardware identifier extracted from the QR payload</li>
+            <li><strong>Serial Number</strong> — product serial number</li>
+            <li><strong>Device Name</strong> — optional user-assigned label</li>
+            <li><strong>Model</strong> — hardware model designation</li>
+            <li><strong>Firmware Version</strong> — device firmware string (from QR code)</li>
+            <li><strong>Hardware Version</strong> — hardware revision string (from QR code)</li>
+            <li><strong>Manufacture Date</strong> — production date from QR payload</li>
+            <li><strong>Raw QR Payload</strong> — full QR code string as scanned</li>
+            <li><strong>Registered At</strong> — local device timestamp of registration</li>
+          </ul>
+          Only one device may be registered at a time. This data is used solely to identify and
+          reconnect to your paired Nuetech hardware. No data leaves the device.
+        </div>
+      </div>
+
+      <div class="storage-item">
+        <div class="label">&#127777;&#65039; Shared Preferences — App Settings</div>
+        <div class="desc">
+          The app uses Android Shared Preferences (key-value storage) to retain lightweight
+          UI preferences such as:
+          <ul style="margin-top:8px;">
+            <li>Whether the in-app tutorial walkthrough has been completed</li>
+            <li>Last-used temperature set point (°C)</li>
+            <li>Last-used time-slot schedule values (Slot 1 and Slot 2 start/end times)</li>
+          </ul>
+          These values are stored entirely on-device and are erased when the app is uninstalled
+          or app data is cleared in Android Settings.
+        </div>
+      </div>
+
+      <div class="storage-item">
+        <div class="label">&#9889; Real-Time Control Data — In-Memory Only</div>
+        <div class="desc">
+          During an active Bluetooth session the following live values are held in memory only.
+          They are never written to disk, logs, or transmitted to any destination:
+          <ul style="margin-top:8px;">
+            <li>Tank temperature reading (°C)</li>
+            <li>Heating coil ON/OFF status</li>
+            <li>Target (set point) temperature</li>
+            <li>Time-slot schedule (Slot 1 &amp; Slot 2 start/end times)</li>
+          </ul>
+          This data exists only while the Bluetooth connection is active and is discarded when
+          the connection ends or the app is closed.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Bluetooth Communication -->
+  <section id="sec5">
+    <h2><span class="sec-num">5</span> Bluetooth Communication</h2>
+    <p>
+      The app communicates exclusively with Nuetech-branded hardware over a direct Bluetooth link
+      (Classic RFCOMM or BLE GATT). All communication is <strong>point-to-point between your
+      phone and the device</strong> — no intermediary server, relay, or cloud gateway is involved.
+    </p>
+    <p>
+      The app operates in <strong>Central/Client role only</strong>. It does not act as a Bluetooth
+      peripheral and does not advertise itself to other devices in the vicinity.
+    </p>
+    <p><strong>Commands sent to your Nuetech device include:</strong></p>
+    <ul>
+      <li>Temperature set point (°C)</li>
+      <li>Time-slot schedule configuration (start and end times for Slot 1 and Slot 2)</li>
+    </ul>
+    <p><strong>Data received from your Nuetech device includes:</strong></p>
+    <ul>
+      <li>Tank temperature reading</li>
+      <li>Heating coil status (ON/OFF)</li>
+      <li>Acknowledgement of active schedule</li>
+    </ul>
+    <p>
+      During scanning, device names are filtered by the prefix <code>nuetech</code>
+      (case-insensitive) so that only your Nuetech hardware is displayed. No Bluetooth
+      scan information about other devices in your environment is retained or logged.
+    </p>
+  </section>
+
+  <!-- 6. Third-Party Libraries -->
+  <section id="sec6">
+    <h2><span class="sec-num">6</span> Third-Party Libraries</h2>
+    <p>
+      The app uses the following open-source Flutter/Dart packages. None of these packages collect,
+      transmit, or report user data to remote servers within this app's configuration. No advertising
+      SDKs, analytics SDKs, crash-reporting tools, or behavioural tracking frameworks are integrated.
+    </p>
+    <table class="perm-table">
+      <thead>
+        <tr>
+          <th>Package</th>
+          <th>Purpose</th>
+          <th>Data Access Scope</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>flutter_blue_plus</td>
+          <td>BLE device scanning and connection management</td>
+          <td>Bluetooth hardware interface only — no network calls</td>
+        </tr>
+        <tr>
+          <td>flutter_bluetooth_serial</td>
+          <td>Classic Bluetooth (RFCOMM) connectivity</td>
+          <td>Bluetooth hardware interface only — no network calls</td>
+        </tr>
+        <tr>
+          <td>permission_handler</td>
+          <td>Runtime Bluetooth and Location permission dialogs</td>
+          <td>Reports permission grant state to the app only — no external reporting</td>
+        </tr>
+        <tr>
+          <td>sqflite</td>
+          <td>Local SQLite database for device registration storage</td>
+          <td>On-device storage only — no network calls</td>
+        </tr>
+        <tr>
+          <td>shared_preferences</td>
+          <td>On-device key-value storage for app settings</td>
+          <td>On-device storage only — no network calls</td>
+        </tr>
+        <tr>
+          <td>device_info_plus</td>
+          <td>Reads Android SDK version to apply the correct Bluetooth permission flow</td>
+          <td>SDK version queried at runtime; value is not stored or transmitted</td>
+        </tr>
+        <tr>
+          <td>google_fonts</td>
+          <td>Inter typeface for UI typography</td>
+          <td>Font assets are bundled at build time; no runtime network request</td>
+        </tr>
+        <tr>
+          <td>url_launcher</td>
+          <td>Opens phone dialer or email client when user taps contact links</td>
+          <td>Launches Android system intent only on explicit user tap</td>
+        </tr>
+        <tr>
+          <td>lottie</td>
+          <td>Animated illustrations on the splash / loading screen</td>
+          <td>Reads bundled asset files only — no network calls</td>
+        </tr>
+        <tr>
+          <td>tutorial_coach_mark</td>
+          <td>First-launch onboarding UI overlay</td>
+          <td>No data collection of any kind</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 7. Data Sharing -->
+  <section id="sec7">
+    <h2><span class="sec-num">7</span> Data Sharing &amp; Disclosure</h2>
+    <p>
+      We do <strong>not</strong> sell, rent, lease, or share any user information with third parties.
+      Because the app collects no personal data and operates entirely offline, there is no user data
+      to share.
+    </p>
+    <p>Data may be disclosed only in the following exceptional legal circumstances:</p>
+    <ul>
+      <li>
+        <strong>Legal obligation:</strong> If required by applicable law, court order, or governmental
+        authority, we may disclose information to the extent required and permitted by law.
+      </li>
+      <li>
+        <strong>Protection of rights:</strong> To protect the rights, property, or safety of
+        Nuetech Solar Systems Pvt. Ltd., our users, or the public.
+      </li>
+    </ul>
+    <p>
+      Given that no personal data is collected by this app, these scenarios would not result in any
+      meaningful personal data disclosure.
+    </p>
+  </section>
+
+  <!-- 8. Children's Privacy -->
+  <section id="sec8">
+    <h2><span class="sec-num">8</span> Children's Privacy</h2>
+    <p>
+      Nuetech BT Controller is designed for adults and intended for use by owners and operators of
+      Nuetech solar water heater systems. The app is <strong>not directed at children under 13 years
+      of age</strong> (or the applicable minimum age in your jurisdiction).
+    </p>
+    <p>
+      We do not knowingly collect any information from children. Since no personal data of any kind
+      is collected by this app, no special risk exists with respect to children's data. If you
+      believe a child has used the app in a way that concerns you, please contact us using the
+      details in Section 12.
+    </p>
+  </section>
+
+  <!-- 9. Data Retention -->
+  <section id="sec9">
+    <h2><span class="sec-num">9</span> Data Retention</h2>
+    <p>
+      All data stored by the app resides exclusively on your device and is retained only as long as
+      the app is installed. Specifically:
+    </p>
+    <ul>
+      <li>
+        <strong>Device registration data</strong> (SQLite database) is retained until you remove the
+        registered device from within the app, or until you uninstall the app.
+      </li>
+      <li>
+        <strong>App settings</strong> (Shared Preferences) are retained until the app is uninstalled
+        or app data is cleared via Android system settings (<em>Settings &rarr; Apps &rarr; Nuetech BT
+        Controller &rarr; Clear Data</em>).
+      </li>
+      <li>
+        <strong>In-session Bluetooth data</strong> (in-memory) is discarded immediately when the
+        Bluetooth session ends or the app is closed.
+      </li>
+    </ul>
+    <p>
+      Uninstalling the app removes all locally stored data. Because we hold no copies of your data,
+      we have no ability to remotely delete data on your behalf.
+    </p>
+  </section>
+
+  <!-- 10. Security -->
+  <section id="sec10">
+    <h2><span class="sec-num">10</span> Security</h2>
+    <p>
+      Because this app operates entirely offline and transmits no personal data to any remote server,
+      it is not exposed to the most prevalent data security risks such as server-side breaches or
+      network-level interception of personal information.
+    </p>
+    <p>Security measures in place include:</p>
+    <ul>
+      <li>All communication is via local Bluetooth — no data traverses the internet.</li>
+      <li>No user credentials or sensitive personal data are ever requested or stored.</li>
+      <li>The app requests only the minimum permissions necessary for core functionality.</li>
+      <li>Device metadata stored locally is limited to non-sensitive hardware identifiers.</li>
+      <li>The app uses Android's built-in SQLite storage, which is sandboxed and inaccessible to other apps.</li>
+    </ul>
+    <p>
+      We recommend keeping your Android device up to date and enabling Android's built-in security
+      features (screen lock, full-disk encryption) to protect locally stored data.
+    </p>
+  </section>
+
+  <!-- 11. Changes -->
+  <section id="sec11">
+    <h2><span class="sec-num">11</span> Changes to This Privacy Policy</h2>
+    <p>
+      We may update this Privacy Policy from time to time to reflect changes in the application's
+      functionality, applicable legal requirements, or data practices. When changes are made, we will
+      update the <strong>"Last Updated"</strong> date at the top of this page.
+    </p>
+    <p>
+      For <strong>material changes</strong> — such as introduction of internet connectivity, cloud
+      features, new permissions, or collection of personal data — we will provide prominent notice
+      within the app and/or via a Google Play Store update description before such changes take effect.
+    </p>
+    <p>
+      Continued use of the app after any changes constitutes your acceptance of the revised policy.
+      If you do not agree with a revised policy, please uninstall the app.
+    </p>
+  </section>
+
+  <!-- 12. Contact -->
+  <section id="sec12">
+    <h2><span class="sec-num">12</span> Contact Us</h2>
+    <p>
+      If you have any questions, concerns, or requests regarding this Privacy Policy or the app's
+      data practices, please reach out to us:
+    </p>
+    <div class="contact-block">
+      <div class="name">Nuetech Solar Systems Pvt. Ltd.</div>
+      #5, B.M. Shankarappa Industrial Estate<br/>
+      Sunkadakatte, Magadi Main Road<br/>
+      Bangalore &ndash; 560 091, Karnataka, India<br/><br/>
+      &#128222; <a href="tel:08023483766">080-23483766</a><br/>
+      &#9993; <a href="mailto:info@nuetechsolar.com">info@nuetechsolar.com</a>
+    </div>
+    <p style="margin-top:16px; font-size:14px; color:var(--text-muted);">
+      We aim to respond to all privacy-related inquiries within <strong>10 business days</strong>.
+    </p>
+  </section>
+
   <hr/>
- 
-  <h2>Google Play Data Safety</h2>
-  <p>Recommended answers for the Data Safety form in Google Play Console:</p>
-  <table class="ds-table">
-    <thead>
-      <tr><th>Question</th><th>Answer</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>Does your app collect or share user data?</td><td>No</td></tr>
-      <tr><td>Data collected</td><td>None</td></tr>
-      <tr><td>Data shared</td><td>None</td></tr>
-      <tr><td>Permissions used</td><td>
-        BLUETOOTH_SCAN (neverForLocation, API 31+),
-        BLUETOOTH_CONNECT (API 31+),
-        BLUETOOTH &amp; BLUETOOTH_ADMIN (legacy, API ≤ 30),
-        ACCESS_FINE_LOCATION &amp; ACCESS_COARSE_LOCATION (API ≤ 30, BLE scan requirement only — location not used)
-      </td></tr>
-      <tr><td>Purpose</td><td>App functionality — local Bluetooth device control only. Location permission on API ≤ 30 is an Android OS requirement for BLE scanning and is not used to determine location.</td></tr>
-    </tbody>
-  </table>
- 
-  <footer>© 2026 Test App. All rights reserved.</footer>
- 
+
+  <!-- Google Play Data Safety Reference -->
+  <section id="data-safety">
+    <h2 style="border-bottom-color:#e2e8f0;">
+      <span class="sec-num" style="background:var(--text-muted);">&#9998;</span>
+      Google Play Data Safety — Reference Answers
+    </h2>
+    <p style="font-size:14px; color:var(--text-muted); margin-bottom:12px;">
+      The table below summarises recommended answers for the <strong>Data Safety</strong> section in
+      Google Play Console. This section is informational and supplements the binding policy above.
+    </p>
+    <table class="ds-table">
+      <thead>
+        <tr>
+          <th>Data Safety Question</th>
+          <th>Recommended Answer</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Does your app collect or share any of the required user data types?</td>
+          <td>
+            <span class="badge">Yes</span> &mdash; Location data is technically accessed by the
+            Android OS as a precondition for Bluetooth scanning. The app itself does not read,
+            use, store, or transmit location data.
+          </td>
+        </tr>
+        <tr>
+          <td>Is all data collected encrypted in transit?</td>
+          <td>N/A &mdash; No data is transmitted over a network.</td>
+        </tr>
+        <tr>
+          <td>Do you provide a way for users to request data deletion?</td>
+          <td>
+            <span class="badge">Yes</span> &mdash; Users can delete the registered device
+            within the app, or clear all data by uninstalling the app or clearing app data
+            in Android Settings.
+          </td>
+        </tr>
+        <tr>
+          <td>Data types collected</td>
+          <td>
+            <strong>Location (Approximate &amp; Precise)</strong> &mdash; accessed as a mandatory
+            Android OS requirement for Bluetooth device discovery. Not read, stored, or transmitted
+            by the app.
+          </td>
+        </tr>
+        <tr>
+          <td>Data types shared with third parties</td>
+          <td><span class="badge badge-no">None</span></td>
+        </tr>
+        <tr>
+          <td>Permissions declared</td>
+          <td>
+            <code>BLUETOOTH_SCAN</code>, <code>BLUETOOTH_CONNECT</code> (API 31+)<br/>
+            <code>BLUETOOTH</code>, <code>BLUETOOTH_ADMIN</code> (legacy, API &le; 30)<br/>
+            <code>ACCESS_FINE_LOCATION</code>, <code>ACCESS_COARSE_LOCATION</code> (all versions)
+          </td>
+        </tr>
+        <tr>
+          <td>Purpose of data access</td>
+          <td>
+            <strong>App functionality only.</strong> Bluetooth permissions enable direct local
+            hardware control. Location permission is a mandatory Android OS requirement for
+            Classic/BLE scanning; the app does not track, store, or transmit physical location.
+          </td>
+        </tr>
+        <tr>
+          <td>Is this data required or optional?</td>
+          <td>
+            <strong>Required.</strong> Without Bluetooth and the associated Location permission,
+            the core function of the app &mdash; device discovery and control &mdash; cannot operate.
+          </td>
+        </tr>
+        <tr>
+          <td>Does your app use the Advertising ID?</td>
+          <td><span class="badge badge-no">No</span></td>
+        </tr>
+        <tr>
+          <td>Does your app collect data from children?</td>
+          <td><span class="badge badge-no">No</span> &mdash; Not directed at users under 13.</td>
+        </tr>
+        <tr>
+          <td>Does the app have ads?</td>
+          <td><span class="badge badge-no">No</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <footer>
+    <span>&#169; 2026 Nuetech Solar Systems Pvt. Ltd. All rights reserved.</span>
+    <span>Nuetech BT Controller &nbsp;&middot;&nbsp; v1.0.0</span>
+  </footer>
+
 </body>
 </html>
